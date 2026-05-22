@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>I Wash V20 - IAS</title>
 
-<!-- FONT -->
+<!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<!-- ICON -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
 <style>
 
@@ -31,25 +29,22 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* BG */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
-
     background:
-    radial-gradient(circle at top right, rgba(0,153,255,0.15), transparent 25%),
-    radial-gradient(circle at bottom left, rgba(0,255,170,0.12), transparent 30%);
-
+    radial-gradient(circle at top right, rgba(0,140,255,.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(0,255,170,.12), transparent 30%);
     z-index:-10;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     position:relative;
-    width:100%;
     min-height:100vh;
     overflow:hidden;
 }
@@ -58,57 +53,46 @@ body::before{
     position:absolute;
     top:50%;
     left:50%;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     transform:translate(-50%,-50%);
-
     z-index:-2;
 }
 
 .overlay{
     position:absolute;
     inset:0;
-
     background:
     linear-gradient(
         to bottom,
-        rgba(0,0,0,0.75),
-        rgba(0,0,0,0.45),
-        rgba(0,0,0,0.92)
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.9)
     );
-
     z-index:-1;
 }
 
 .hero-content{
-    width:100%;
     min-height:100vh;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
-    padding:30px 20px;
+    padding:20px;
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 
 .logo{
     width:260px;
     max-width:80%;
-
     margin-bottom:25px;
 
     filter:
-    drop-shadow(0 0 25px rgba(0,255,255,0.35))
-    drop-shadow(0 0 45px rgba(0,140,255,0.25));
+    drop-shadow(0 0 25px rgba(0,255,255,.35))
+    drop-shadow(0 0 50px rgba(0,140,255,.25));
 
     animation:float 4s ease-in-out infinite;
 }
@@ -119,37 +103,28 @@ body::before{
     100%{transform:translateY(0);}
 }
 
-/* ================= TEXT ================= */
+/* TEXT */
 
 .hero h1{
     font-size:3.5rem;
     font-weight:800;
-
-    line-height:1.1;
-
     margin-bottom:15px;
 
-    background:linear-gradient(to right,#ffffff,#76d7ff);
+    background:linear-gradient(to right,#fff,#79d9ff);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-
-    text-shadow:0 0 25px rgba(255,255,255,0.2);
 }
 
 .hero p{
-    color:#d6d6d6;
-
-    font-size:1.1rem;
-
-    line-height:1.8;
-
     max-width:700px;
-
-    margin-bottom:45px;
+    line-height:1.8;
+    color:#ddd;
+    font-size:1.05rem;
+    margin-bottom:40px;
 }
 
-/* ================= BUTTONS ================= */
+/* BUTTON */
 
 .btn-group{
     width:100%;
@@ -164,141 +139,114 @@ body::before{
 .btn{
     position:relative;
 
-    overflow:hidden;
-
     display:flex;
     align-items:center;
     justify-content:center;
     gap:12px;
 
-    padding:18px 24px;
+    padding:18px;
 
     border-radius:22px;
 
-    font-size:1rem;
+    text-decoration:none;
+    color:#fff;
+
     font-weight:600;
 
-    text-decoration:none;
+    overflow:hidden;
 
-    transition:0.35s;
+    transition:.35s;
 
-    border:1px solid rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,.08);
 
     backdrop-filter:blur(15px);
 
     box-shadow:
-    0 12px 30px rgba(0,0,0,0.35);
-
-    color:#fff;
-}
-
-.btn::before{
-    content:"";
-
-    position:absolute;
-    top:0;
-    left:-120%;
-
-    width:100%;
-    height:100%;
-
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.25),
-        transparent
-    );
-
-    transition:0.7s;
-}
-
-.btn:hover::before{
-    left:120%;
+    0 10px 30px rgba(0,0,0,.35);
 }
 
 .btn:hover{
     transform:translateY(-4px) scale(1.02);
 }
 
-.btn i{
-    font-size:1.1rem;
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.2),
+        transparent
+    );
+    transition:.7s;
 }
 
-/* BUTTON COLORS */
+.btn:hover::before{
+    left:120%;
+}
 
 .btn-primary{
-    background:
-    linear-gradient(135deg,#00c6ff,#0072ff);
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
 }
 
 .btn-line{
-    background:
-    linear-gradient(135deg,#06C755,#00ff99);
+    background:linear-gradient(135deg,#06C755,#00ff99);
 }
 
 .btn-map{
-    background:
-    linear-gradient(135deg,#232526,#414345);
+    background:linear-gradient(135deg,#2b2b2b,#454545);
 }
 
 .btn-call{
-    background:
-    linear-gradient(135deg,#ff512f,#dd2476);
+    background:linear-gradient(135deg,#ff512f,#dd2476);
 }
 
-/* ================= PROMOTION ================= */
+/* PROMOTION */
 
-.promotion-section{
-    background:
-    linear-gradient(to bottom,#020202,#090909);
-
+.promotion{
     padding:100px 20px;
-
     text-align:center;
+    background:#050505;
 }
 
-.promotion-section h2{
+.promotion h2{
     font-size:2.8rem;
-
     margin-bottom:15px;
 
-    background:
-    linear-gradient(to right,#ffffff,#79d9ff);
+    background:linear-gradient(to right,#fff,#79d9ff);
 
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-.promotion-section p{
-    color:#9f9f9f;
-
-    margin-bottom:45px;
+.promotion p{
+    color:#999;
+    margin-bottom:40px;
 }
 
-/* ================= SLIDER ================= */
+/* SLIDER */
 
 .slider{
-    position:relative;
-
-    width:100%;
     max-width:1200px;
-
     margin:auto;
-
     overflow:hidden;
-
     border-radius:30px;
 
-    border:1px solid rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,.08);
 
     box-shadow:
-    0 0 45px rgba(0,153,255,0.15),
-    0 30px 70px rgba(0,0,0,0.55);
+    0 0 40px rgba(0,153,255,.12),
+    0 30px 60px rgba(0,0,0,.45);
 }
 
 .slides{
     display:flex;
-    transition:0.5s ease;
+    transition:.5s ease;
 }
 
 .slides img{
@@ -307,164 +255,74 @@ body::before{
     object-fit:cover;
 }
 
-/* ================= SLIDE BUTTON ================= */
+/* SLIDE BUTTON */
 
 .slider-buttons{
-    margin-top:30px;
-
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:18px;
+    margin-top:30px;
 }
 
 .slide-btn{
-    width:60px;
-    height:60px;
-
+    width:58px;
+    height:58px;
     border:none;
     border-radius:50%;
+    cursor:pointer;
+
+    color:#fff;
 
     background:
     linear-gradient(135deg,#00c6ff,#0072ff);
 
-    color:#fff;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    box-shadow:
-    0 0 25px rgba(0,114,255,0.35);
+    transition:.3s;
 }
 
 .slide-btn:hover{
     transform:scale(1.08);
 }
 
-/* ================= PROMO TEXT ================= */
-
-.promo-text{
-    margin-top:35px;
-
-    font-size:1.15rem;
-    font-weight:500;
-
-    color:#fff;
-
-    text-shadow:
-    0 0 15px rgba(0,255,255,0.25);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-    padding:35px 20px;
-
+    padding:30px 20px;
     text-align:center;
-
-    color:#888;
-
-    border-top:1px solid rgba(255,255,255,0.05);
-
-    background:#000;
-
-    font-size:0.95rem;
+    color:#777;
+    border-top:1px solid rgba(255,255,255,.05);
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
-@media(max-width:992px){
+@media(max-width:768px){
 
     .hero h1{
-        font-size:2.6rem;
+        font-size:2rem;
+    }
+
+    .hero p{
+        font-size:.95rem;
     }
 
     .btn-group{
         grid-template-columns:1fr;
     }
 
-}
-
-@media(max-width:768px){
-
-    .hero-content{
-        padding:30px 18px 50px;
-    }
-
-    .logo{
-        width:190px;
-    }
-
-    .hero h1{
+    .promotion h2{
         font-size:2rem;
-        line-height:1.3;
-    }
-
-    .hero p{
-        font-size:0.95rem;
-        line-height:1.7;
-        margin-bottom:30px;
-    }
-
-    .btn{
-        width:100%;
-        padding:16px 18px;
-        font-size:0.95rem;
-        border-radius:18px;
-    }
-
-    .promotion-section{
-        padding:80px 15px;
-    }
-
-    .promotion-section h2{
-        font-size:2rem;
-    }
-
-    .slider{
-        border-radius:22px;
-    }
-
-    .slide-btn{
-        width:52px;
-        height:52px;
-    }
-
-    .promo-text{
-        font-size:1rem;
-        line-height:1.7;
-        padding:0 10px;
-    }
-
-}
-
-@media(max-width:480px){
-
-    .hero h1{
-        font-size:1.7rem;
-    }
-
-    .hero p{
-        font-size:0.9rem;
-    }
-
-    .promotion-section h2{
-        font-size:1.7rem;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-    <!-- VIDEO -->
     <video autoplay muted loop playsinline>
         <source src="Video/IWashV20.mp4" type="video/mp4">
     </video>
@@ -476,7 +334,6 @@ footer{
         <!-- LOGO -->
         <img src="image/logo.png" alt="I Wash V20 Logo" class="logo">
 
-        <!-- TITLE -->
         <h1>I Wash V20 - IAS</h1>
 
         <p>
@@ -484,7 +341,6 @@ footer{
             ดูแลทุกดีเทลของรถคุณ ให้กลับมาหล่อเหมือนวันแรก
         </p>
 
-        <!-- BUTTONS -->
         <div class="btn-group">
 
             <a href="#promotion" class="btn btn-primary">
@@ -504,7 +360,7 @@ footer{
 
             <a href="tel:0899387244" class="btn btn-call">
                 <i class="fa-solid fa-phone"></i>
-                โทร 089-938-7244
+                โทรหาเรา
             </a>
 
         </div>
@@ -513,30 +369,27 @@ footer{
 
 </section>
 
-<!-- ================= PROMOTION ================= -->
+<!-- PROMOTION -->
 
-<section class="promotion-section" id="promotion">
+<section class="promotion" id="promotion">
 
     <h2>โปรโมชั่นล่าสุด</h2>
 
     <p>
-        โปรโมชั่นสุดคุ้ม สำหรับคนรักรถตัวจริง
+        โปรแรงสำหรับคนรักรถ ดูแลครบ จบในที่เดียว
     </p>
 
-    <!-- SLIDER -->
     <div class="slider">
 
         <div class="slides" id="slides">
 
-            <img src="image/promo1.jpg" alt="Promotion 1">
-
-            <img src="image/promo2.png" alt="Promotion 2">
+            <img src="image/promo1.jpg" alt="">
+            <img src="image/promo2.png" alt="">
 
         </div>
 
     </div>
 
-    <!-- BUTTON -->
     <div class="slider-buttons">
 
         <button class="slide-btn" onclick="prevSlide()">
@@ -549,19 +402,11 @@ footer{
 
     </div>
 
-    <div class="promo-text">
-        สนใจโปรโมชั่น ทักไลน์เราได้เลย
-    </div>
-
 </section>
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
     © 2026 I Wash V20 - IAS | Premium Carcare & Service Center
 </footer>
-
-<!-- ================= SCRIPT ================= -->
 
 <script>
 
@@ -587,8 +432,6 @@ function prevSlide(){
 
     updateSlide();
 }
-
-/* AUTO SLIDE */
 
 setInterval(() => {
     nextSlide();
