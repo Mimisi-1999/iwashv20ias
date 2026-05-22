@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>I Wash V20 - IAS</title>
 
-<!-- Google Font -->
+<!-- FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<!-- ICON -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
@@ -29,7 +31,7 @@ body{
     overflow-x:hidden;
 }
 
-/* Animated Background */
+/* ================= BACKGROUND ================= */
 
 body::before{
     content:"";
@@ -96,7 +98,7 @@ body::before{
     padding:30px 20px;
 }
 
-/* Logo */
+/* ================= LOGO ================= */
 
 .logo{
     width:260px;
@@ -117,7 +119,7 @@ body::before{
     100%{transform:translateY(0);}
 }
 
-/* Text */
+/* ================= TEXT ================= */
 
 .hero h1{
     font-size:3.5rem;
@@ -159,8 +161,6 @@ body::before{
     gap:18px;
 }
 
-/* Main Button */
-
 .btn{
     position:relative;
 
@@ -188,9 +188,9 @@ body::before{
 
     box-shadow:
     0 12px 30px rgba(0,0,0,0.35);
-}
 
-/* Shine Effect */
+    color:#fff;
+}
 
 .btn::before{
     content:"";
@@ -220,58 +220,30 @@ body::before{
     transform:translateY(-4px) scale(1.02);
 }
 
-/* Icon */
-
 .btn i{
     font-size:1.1rem;
 }
 
-/* โปรโมชั่น */
+/* BUTTON COLORS */
 
 .btn-primary{
     background:
     linear-gradient(135deg,#00c6ff,#0072ff);
-
-    color:#fff;
-
-    box-shadow:
-    0 0 25px rgba(0,114,255,0.45);
 }
-
-/* LINE */
 
 .btn-line{
     background:
     linear-gradient(135deg,#06C755,#00ff99);
-
-    color:#fff;
-
-    box-shadow:
-    0 0 25px rgba(6,199,85,0.4);
 }
-
-/* MAP */
 
 .btn-map{
     background:
     linear-gradient(135deg,#232526,#414345);
-
-    color:#fff;
-
-    box-shadow:
-    0 0 20px rgba(255,255,255,0.08);
 }
-
-/* CALL */
 
 .btn-call{
     background:
     linear-gradient(135deg,#ff512f,#dd2476);
-
-    color:#fff;
-
-    box-shadow:
-    0 0 25px rgba(255,81,47,0.35);
 }
 
 /* ================= PROMOTION ================= */
@@ -303,7 +275,7 @@ body::before{
     margin-bottom:45px;
 }
 
-/* Slider */
+/* ================= SLIDER ================= */
 
 .slider{
     position:relative;
@@ -335,7 +307,7 @@ body::before{
     object-fit:cover;
 }
 
-/* Slider Buttons */
+/* ================= SLIDE BUTTON ================= */
 
 .slider-buttons{
     margin-top:30px;
@@ -369,7 +341,7 @@ body::before{
     transform:scale(1.08);
 }
 
-/* Promo Text */
+/* ================= PROMO TEXT ================= */
 
 .promo-text{
     margin-top:35px;
@@ -381,22 +353,6 @@ body::before{
 
     text-shadow:
     0 0 15px rgba(0,255,255,0.25);
-}
-
-/* Bottom Buttons */
-
-.bottom-buttons{
-    margin-top:35px;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-
-    max-width:1100px;
-
-    margin-left:auto;
-    margin-right:auto;
 }
 
 /* ================= FOOTER ================= */
@@ -424,10 +380,6 @@ footer{
     }
 
     .btn-group{
-        grid-template-columns:1fr;
-    }
-
-    .bottom-buttons{
         grid-template-columns:1fr;
     }
 
@@ -503,6 +455,7 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -513,7 +466,7 @@ footer{
 
     <!-- VIDEO -->
     <video autoplay muted loop playsinline>
-        <source src="Video/IWashV20.MP4" type="video/mp4">
+        <source src="Video/IWashV20.mp4" type="video/mp4">
     </video>
 
     <div class="overlay"></div>
@@ -521,7 +474,7 @@ footer{
     <div class="hero-content">
 
         <!-- LOGO -->
-        <img src="image/โลโก้.PNG" alt="I Wash V20 Logo" class="logo">
+        <img src="image/logo.png" alt="I Wash V20 Logo" class="logo">
 
         <!-- TITLE -->
         <h1>I Wash V20 - IAS</h1>
@@ -534,25 +487,21 @@ footer{
         <!-- BUTTONS -->
         <div class="btn-group">
 
-            <!-- โปรโมชั่น -->
             <a href="#promotion" class="btn btn-primary">
                 <i class="fa-solid fa-fire"></i>
-                ดูโปรโมชั่นของเราตอนนี้
+                ดูโปรโมชั่นล่าสุด
             </a>
 
-            <!-- LINE -->
             <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn btn-line">
                 <i class="fa-brands fa-line"></i>
-                LINE Official Account
+                เพิ่มเพื่อนบน LINE
             </a>
 
-            <!-- MAP -->
             <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn btn-map">
                 <i class="fa-solid fa-location-dot"></i>
                 เปิดแผนที่ร้าน
             </a>
 
-            <!-- CALL -->
             <a href="tel:0899387244" class="btn btn-call">
                 <i class="fa-solid fa-phone"></i>
                 โทร 089-938-7244
@@ -579,15 +528,15 @@ footer{
 
         <div class="slides" id="slides">
 
-            <img src="image/โปรที่1.jpg" alt="Promotion 1">
+            <img src="image/promo1.jpg" alt="Promotion 1">
 
-            <img src="image/โปรที่2.png" alt="Promotion 2">
+            <img src="image/promo2.png" alt="Promotion 2">
 
         </div>
 
     </div>
 
-    <!-- SLIDER BUTTON -->
+    <!-- BUTTON -->
     <div class="slider-buttons">
 
         <button class="slide-btn" onclick="prevSlide()">
@@ -600,32 +549,8 @@ footer{
 
     </div>
 
-    <!-- TEXT -->
     <div class="promo-text">
         สนใจโปรโมชั่น ทักไลน์เราได้เลย
-    </div>
-
-    <!-- BOTTOM BUTTON -->
-    <div class="bottom-buttons">
-
-        <!-- LINE -->
-        <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn btn-line">
-            <i class="fa-brands fa-line"></i>
-            LINE Official Account
-        </a>
-
-        <!-- MAP -->
-        <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn btn-map">
-            <i class="fa-solid fa-location-dot"></i>
-            เปิดแผนที่ร้าน
-        </a>
-
-        <!-- CALL -->
-        <a href="tel:0899387244" class="btn btn-call">
-            <i class="fa-solid fa-phone"></i>
-            โทรหาเรา
-        </a>
-
     </div>
 
 </section>
@@ -647,7 +572,8 @@ const slides = document.getElementById('slides');
 const totalSlides = document.querySelectorAll('.slides img').length;
 
 function updateSlide(){
-    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    slides.style.transform =
+    `translateX(-${slideIndex * 100}%)`;
 }
 
 function nextSlide(){
@@ -656,11 +582,13 @@ function nextSlide(){
 }
 
 function prevSlide(){
-    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+    slideIndex =
+    (slideIndex - 1 + totalSlides) % totalSlides;
+
     updateSlide();
 }
 
-/* Auto Slide */
+/* AUTO SLIDE */
 
 setInterval(() => {
     nextSlide();
