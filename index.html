@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I Wash V20 - IAS</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Kanit',sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top right, rgba(0,153,255,0.15), transparent 25%),
+    radial-gradient(circle at bottom left, rgba(0,255,170,0.12), transparent 30%);
+
+    z-index:-10;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.hero video{
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-2;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.92)
+    );
+
+    z-index:-1;
+}
+
+.hero-content{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+/* Logo */
+
+.logo{
+    width:260px;
+    max-width:80%;
+
+    margin-bottom:25px;
+
+    filter:
+    drop-shadow(0 0 25px rgba(0,255,255,0.35))
+    drop-shadow(0 0 45px rgba(0,140,255,0.25));
+
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+/* Text */
+
+.hero h1{
+    font-size:3.5rem;
+    font-weight:800;
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+
+    background:linear-gradient(to right,#ffffff,#76d7ff);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:0 0 25px rgba(255,255,255,0.2);
+}
+
+.hero p{
+    color:#d6d6d6;
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin-bottom:45px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-group{
+    width:100%;
+    max-width:1000px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+}
+
+/* Main Button */
+
+.btn{
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    padding:18px 24px;
+
+    border-radius:22px;
+
+    font-size:1rem;
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:0.35s;
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* Shine Effect */
+
+.btn::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+
+    transition:0.7s;
+}
+
+.btn:hover::before{
+    left:120%;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+}
+
+/* Icon */
+
+.btn i{
+    font-size:1.1rem;
+}
+
+/* โปรโมชั่น */
+
+.btn-primary{
+    background:
+    linear-gradient(135deg,#00c6ff,#0072ff);
+
+    color:#fff;
+
+    box-shadow:
+    0 0 25px rgba(0,114,255,0.45);
+}
+
+/* LINE */
+
+.btn-line{
+    background:
+    linear-gradient(135deg,#06C755,#00ff99);
+
+    color:#fff;
+
+    box-shadow:
+    0 0 25px rgba(6,199,85,0.4);
+}
+
+/* MAP */
+
+.btn-map{
+    background:
+    linear-gradient(135deg,#232526,#414345);
+
+    color:#fff;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,0.08);
+}
+
+/* CALL */
+
+.btn-call{
+    background:
+    linear-gradient(135deg,#ff512f,#dd2476);
+
+    color:#fff;
+
+    box-shadow:
+    0 0 25px rgba(255,81,47,0.35);
+}
+
+/* ================= PROMOTION ================= */
+
+.promotion-section{
+    background:
+    linear-gradient(to bottom,#020202,#090909);
+
+    padding:100px 20px;
+
+    text-align:center;
+}
+
+.promotion-section h2{
+    font-size:2.8rem;
+
+    margin-bottom:15px;
+
+    background:
+    linear-gradient(to right,#ffffff,#79d9ff);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.promotion-section p{
+    color:#9f9f9f;
+
+    margin-bottom:45px;
+}
+
+/* Slider */
+
+.slider{
+    position:relative;
+
+    width:100%;
+    max-width:1200px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 45px rgba(0,153,255,0.15),
+    0 30px 70px rgba(0,0,0,0.55);
+}
+
+.slides{
+    display:flex;
+    transition:0.5s ease;
+}
+
+.slides img{
+    width:100%;
+    flex-shrink:0;
+    object-fit:cover;
+}
+
+/* Slider Buttons */
+
+.slider-buttons{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.slide-btn{
+    width:60px;
+    height:60px;
+
+    border:none;
+    border-radius:50%;
+
+    background:
+    linear-gradient(135deg,#00c6ff,#0072ff);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 25px rgba(0,114,255,0.35);
+}
+
+.slide-btn:hover{
+    transform:scale(1.08);
+}
+
+/* Promo Text */
+
+.promo-text{
+    margin-top:35px;
+
+    font-size:1.15rem;
+    font-weight:500;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 15px rgba(0,255,255,0.25);
+}
+
+/* Bottom Buttons */
+
+.bottom-buttons{
+    margin-top:35px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    max-width:1100px;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:35px 20px;
+
+    text-align:center;
+
+    color:#888;
+
+    border-top:1px solid rgba(255,255,255,0.05);
+
+    background:#000;
+
+    font-size:0.95rem;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:2.6rem;
+    }
+
+    .btn-group{
+        grid-template-columns:1fr;
+    }
+
+    .bottom-buttons{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero-content{
+        padding:30px 18px 50px;
+    }
+
+    .logo{
+        width:190px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+        line-height:1.3;
+    }
+
+    .hero p{
+        font-size:0.95rem;
+        line-height:1.7;
+        margin-bottom:30px;
+    }
+
+    .btn{
+        width:100%;
+        padding:16px 18px;
+        font-size:0.95rem;
+        border-radius:18px;
+    }
+
+    .promotion-section{
+        padding:80px 15px;
+    }
+
+    .promotion-section h2{
+        font-size:2rem;
+    }
+
+    .slider{
+        border-radius:22px;
+    }
+
+    .slide-btn{
+        width:52px;
+        height:52px;
+    }
+
+    .promo-text{
+        font-size:1rem;
+        line-height:1.7;
+        padding:0 10px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:1.7rem;
+    }
+
+    .hero p{
+        font-size:0.9rem;
+    }
+
+    .promotion-section h2{
+        font-size:1.7rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline>
+        <source src="Video/IWashV20.MP4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <!-- LOGO -->
+        <img src="image/โลโก้.PNG" alt="I Wash V20 Logo" class="logo">
+
+        <!-- TITLE -->
+        <h1>I Wash V20 - IAS</h1>
+
+        <p>
+            ศูนย์ซ่อมรถครบวงจรและคาร์แคร์ระดับพรีเมียม<br>
+            ดูแลทุกดีเทลของรถคุณ ให้กลับมาหล่อเหมือนวันแรก
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="btn-group">
+
+            <!-- โปรโมชั่น -->
+            <a href="#promotion" class="btn btn-primary">
+                <i class="fa-solid fa-fire"></i>
+                ดูโปรโมชั่นของเราตอนนี้
+            </a>
+
+            <!-- LINE -->
+            <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn btn-line">
+                <i class="fa-brands fa-line"></i>
+                LINE Official Account
+            </a>
+
+            <!-- MAP -->
+            <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn btn-map">
+                <i class="fa-solid fa-location-dot"></i>
+                เปิดแผนที่ร้าน
+            </a>
+
+            <!-- CALL -->
+            <a href="tel:0899387244" class="btn btn-call">
+                <i class="fa-solid fa-phone"></i>
+                โทร 089-938-7244
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PROMOTION ================= -->
+
+<section class="promotion-section" id="promotion">
+
+    <h2>โปรโมชั่นล่าสุด</h2>
+
+    <p>
+        โปรโมชั่นสุดคุ้ม สำหรับคนรักรถตัวจริง
+    </p>
+
+    <!-- SLIDER -->
+    <div class="slider">
+
+        <div class="slides" id="slides">
+
+            <img src="image/โปรที่1.jpg" alt="Promotion 1">
+
+            <img src="image/โปรที่2.png" alt="Promotion 2">
+
+        </div>
+
+    </div>
+
+    <!-- SLIDER BUTTON -->
+    <div class="slider-buttons">
+
+        <button class="slide-btn" onclick="prevSlide()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="slide-btn" onclick="nextSlide()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+    <!-- TEXT -->
+    <div class="promo-text">
+        สนใจโปรโมชั่น ทักไลน์เราได้เลย
+    </div>
+
+    <!-- BOTTOM BUTTON -->
+    <div class="bottom-buttons">
+
+        <!-- LINE -->
+        <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn btn-line">
+            <i class="fa-brands fa-line"></i>
+            LINE Official Account
+        </a>
+
+        <!-- MAP -->
+        <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn btn-map">
+            <i class="fa-solid fa-location-dot"></i>
+            เปิดแผนที่ร้าน
+        </a>
+
+        <!-- CALL -->
+        <a href="tel:0899387244" class="btn btn-call">
+            <i class="fa-solid fa-phone"></i>
+            โทรหาเรา
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+    © 2026 I Wash V20 - IAS | Premium Carcare & Service Center
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+
+let slideIndex = 0;
+
+const slides = document.getElementById('slides');
+
+const totalSlides = document.querySelectorAll('.slides img').length;
+
+function updateSlide(){
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+function nextSlide(){
+    slideIndex = (slideIndex + 1) % totalSlides;
+    updateSlide();
+}
+
+function prevSlide(){
+    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+}
+
+/* Auto Slide */
+
+setInterval(() => {
+    nextSlide();
+}, 5000);
+
+</script>
+
+</body>
+</html>
