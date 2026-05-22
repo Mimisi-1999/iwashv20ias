@@ -1,443 +1,357 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>I Wash V20 - IAS</title>
-
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Kanit',sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-/* BG */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top right, rgba(0,140,255,.18), transparent 30%),
-    radial-gradient(circle at bottom left, rgba(0,255,170,.12), transparent 30%);
-    z-index:-10;
-}
-
-/* HERO */
-
-.hero{
-    position:relative;
-    min-height:100vh;
-    overflow:hidden;
-}
-
-.hero video{
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transform:translate(-50%,-50%);
-    z-index:-2;
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.9)
-    );
-    z-index:-1;
-}
-
-.hero-content{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-
-/* LOGO */
-
-.logo{
-    width:260px;
-    max-width:80%;
-    margin-bottom:25px;
-
-    filter:
-    drop-shadow(0 0 25px rgba(0,255,255,.35))
-    drop-shadow(0 0 50px rgba(0,140,255,.25));
-
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
-}
-
-/* TEXT */
-
-.hero h1{
-    font-size:3.5rem;
-    font-weight:800;
-    margin-bottom:15px;
-
-    background:linear-gradient(to right,#fff,#79d9ff);
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-    max-width:700px;
-    line-height:1.8;
-    color:#ddd;
-    font-size:1.05rem;
-    margin-bottom:40px;
-}
-
-/* BUTTON */
-
-.btn-group{
-    width:100%;
-    max-width:1000px;
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-
-    gap:18px;
-}
-
-.btn{
-    position:relative;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-
-    padding:18px;
-
-    border-radius:22px;
-
-    text-decoration:none;
-    color:#fff;
-
-    font-weight:600;
-
-    overflow:hidden;
-
-    transition:.35s;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
-}
-
-.btn:hover{
-    transform:translateY(-4px) scale(1.02);
-}
-
-.btn::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.2),
-        transparent
-    );
-    transition:.7s;
-}
-
-.btn:hover::before{
-    left:120%;
-}
-
-.btn-primary{
-    background:linear-gradient(135deg,#00c6ff,#0072ff);
-}
-
-.btn-line{
-    background:linear-gradient(135deg,#06C755,#00ff99);
-}
-
-.btn-map{
-    background:linear-gradient(135deg,#2b2b2b,#454545);
-}
-
-.btn-call{
-    background:linear-gradient(135deg,#ff512f,#dd2476);
-}
-
-/* PROMOTION */
-
-.promotion{
-    padding:100px 20px;
-    text-align:center;
-    background:#050505;
-}
-
-.promotion h2{
-    font-size:2.8rem;
-    margin-bottom:15px;
-
-    background:linear-gradient(to right,#fff,#79d9ff);
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.promotion p{
-    color:#999;
-    margin-bottom:40px;
-}
-
-/* SLIDER */
-
-.slider{
-    max-width:1200px;
-    margin:auto;
-    overflow:hidden;
-    border-radius:30px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-    0 0 40px rgba(0,153,255,.12),
-    0 30px 60px rgba(0,0,0,.45);
-}
-
-.slides{
-    display:flex;
-    transition:.5s ease;
-}
-
-.slides img{
-    width:100%;
-    flex-shrink:0;
-    object-fit:cover;
-}
-
-/* SLIDE BUTTON */
-
-.slider-buttons{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin-top:30px;
-}
-
-.slide-btn{
-    width:58px;
-    height:58px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-
-    color:#fff;
-
-    background:
-    linear-gradient(135deg,#00c6ff,#0072ff);
-
-    transition:.3s;
-}
-
-.slide-btn:hover{
-    transform:scale(1.08);
-}
-
-/* FOOTER */
-
-footer{
-    padding:30px 20px;
-    text-align:center;
-    color:#777;
-    border-top:1px solid rgba(255,255,255,.05);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .hero h1{
-        font-size:2rem;
-    }
-
-    .hero p{
-        font-size:.95rem;
-    }
-
-    .btn-group{
-        grid-template-columns:1fr;
-    }
-
-    .promotion h2{
-        font-size:2rem;
-    }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Wash V24 - IAS ศูนย์ซ่อมรถครบวงจรและคาร์แคร์ กรุงเทพ</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Base Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(10,10,10,0.95) 100%);
+            z-index: -1;
+        }
+        .logo {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 4px 20px rgba(255,255,255,0.15));
+            animation: fadeIn 1.5s ease-out;
+        }
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            padding: 0 10px;
+        }
+        .btn-promo {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff3333 0%, #990000 100%);
+            color: #ffffff;
+            padding: 16px 38px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-promo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 51, 51, 0.6);
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+        }
+
+        /* Promotion Section */
+        .promo-section {
+            padding: 60px 15px 100px 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #ff3333;
+        }
+
+        /* Slider / Carousel Content (Optimized for Mobile) */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto 40px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border: 1px solid #222;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .slide {
+            min-width: 100%;
+            height: auto;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            z-index: 10;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .slider-btn:hover {
+            background-color: #ff3333;
+        }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* Contact Buttons Section (Mobile Friendly) */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        .btn-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.25s ease;
+            color: #fff;
+            border: none;
+        }
+        .btn-line {
+            background-color: #06C755;
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.25);
+        }
+        .btn-line:hover, .btn-line:active {
+            background-color: #05a848;
+            transform: translateY(-2px);
+        }
+        .btn-map {
+            background-color: #161616;
+            border: 1px solid #2d2d2d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .btn-map i {
+            color: #4285F4;
+        }
+        .btn-map:hover, .btn-map:active {
+            background-color: #222;
+            border-color: #444;
+            transform: translateY(-2px);
+        }
+        .btn-phone {
+            background-color: #1a0505;
+            border: 1px solid #ff3333;
+            color: #ff3333;
+            box-shadow: 0 4px 15px rgba(255, 51, 51, 0.15);
+        }
+        .btn-phone:hover, .btn-phone:active {
+            background-color: #ff3333;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.85rem;
+            color: #444;
+            border-top: 1px solid #111;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Breakpoints for Mobile Phones */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 1.8rem; }
+            .hero-subtitle { font-size: 0.95rem; margin-bottom: 30px; }
+            .btn-promo { padding: 14px 32px; font-size: 1rem; }
+            .section-title { font-size: 1.6rem; }
+            .slider-btn { width: 38px; height: 38px; font-size: 0.9rem; }
+            .btn-contact { padding: 16px; font-size: 1rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
+    <!-- 1. Hero Banner Section -->
+    <section class="hero">
+        <!-- แก้ไขชื่อไฟล์วิดีโอให้เบิ้ล .mp4.mp4 ตามจริงบน GitHub -->
+        <video class="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
+            <source src="IWashV20.mp4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
 
-<section class="hero">
+        <!-- แก้ไขชื่อไฟล์โลโก้ให้เบิ้ล .png.png ตามจริงบน GitHub -->
+        <img src="logo.png.png" alt="I Wash V24 - IAS Logo" class="logo">
+        
+        <h1 class="hero-title">I Wash V24 - IAS</h1>
+        <p class="hero-subtitle">ศูนย์ซ่อมรถครบวงจรและคาร์แคร์ระดับพรีเมียม กรุงเทพ</p>
+        
+        <button class="btn-promo" onclick="scrollToPromo()">ดูโปรโมชั่นของเราตอนนี้</button>
+    </section>
 
-    <video autoplay muted loop playsinline>
-        <source src="Video/IWashV20.mp4" type="video/mp4">
-    </video>
+    <!-- 2. Promotion Section -->
+    <section class="promo-section" id="promotion-target">
+        <h2 class="section-title">โปรโมชั่นพิเศษสุดคุ้ม</h2>
+        
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <!-- สไลด์ภาพแก้ไขให้ชื่อตรงกับไฟล์บน GitHub -->
+                <div class="slide">
+                    <img src="promo1.jpg.jpg" alt="Promotion 1">
+                </div>
+                <div class="slide">
+                    <img src="promo2.png.png" alt="Promotion 2">
+                </div>
+            </div>
+            <button class="slider-btn prev" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-btn next" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
 
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-
-        <!-- LOGO -->
-        <img src="image/logo.png" alt="I Wash V20 Logo" class="logo">
-
-        <h1>I Wash V20 - IAS</h1>
-
-        <p>
-            ศูนย์ซ่อมรถครบวงจรและคาร์แคร์ระดับพรีเมียม<br>
-            ดูแลทุกดีเทลของรถคุณ ให้กลับมาหล่อเหมือนวันแรก
-        </p>
-
-        <div class="btn-group">
-
-            <a href="#promotion" class="btn btn-primary">
-                <i class="fa-solid fa-fire"></i>
-                ดูโปรโมชั่นล่าสุด
+        <!-- 3. Contact Buttons -->
+        <div class="contact-container">
+            <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn-contact btn-line">
+                <i class="fa-brands fa-line" style="font-size: 1.5rem;"></i>
+                LINE Official Account
             </a>
-
-            <a href="https://line.me/R/ti/p/@ksp6628c" target="_blank" class="btn btn-line">
-                <i class="fa-brands fa-line"></i>
-                เพิ่มเพื่อนบน LINE
+            
+            <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn-contact btn-map">
+                <i class="fa-solid fa-map-location-dot"></i>
+                ดูแผนที่นำทาง (Google Maps)
             </a>
-
-            <a href="https://maps.app.goo.gl/gvh8F1iNczJQDhYN8" target="_blank" class="btn btn-map">
-                <i class="fa-solid fa-location-dot"></i>
-                เปิดแผนที่ร้าน
-            </a>
-
-            <a href="tel:0899387244" class="btn btn-call">
+            
+            <a href="tel:089-938-7244" class="btn-contact btn-phone">
                 <i class="fa-solid fa-phone"></i>
-                โทรหาเรา
+                โทรเลย: 089-938-7244
             </a>
-
         </div>
+    </section>
 
-    </div>
+    <footer>
+        <p>&copy; 2026 I Wash V24 - IAS. All Rights Reserved.</p>
+    </footer>
 
-</section>
+    <script>
+        // ฟังก์ชันกดปุ่มแล้วเลื่อนลงมาที่โปรโมชั่นแบบสมูท
+        function scrollToPromo() {
+            document.getElementById('promotion-target').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
 
-<!-- PROMOTION -->
+        // ระบบควบคุมสไลด์รูปภาพโปรโมชั่น
+        let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-<section class="promotion" id="promotion">
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
 
-    <h2>โปรโมชั่นล่าสุด</h2>
-
-    <p>
-        โปรแรงสำหรับคนรักรถ ดูแลครบ จบในที่เดียว
-    </p>
-
-    <div class="slider">
-
-        <div class="slides" id="slides">
-
-            <img src="image/promo1.jpg" alt="">
-            <img src="image/promo2.png" alt="">
-
-        </div>
-
-    </div>
-
-    <div class="slider-buttons">
-
-        <button class="slide-btn" onclick="prevSlide()">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-
-        <button class="slide-btn" onclick="nextSlide()">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-    </div>
-
-</section>
-
-<footer>
-    © 2026 I Wash V20 - IAS | Premium Carcare & Service Center
-</footer>
-
-<script>
-
-let slideIndex = 0;
-
-const slides = document.getElementById('slides');
-
-const totalSlides = document.querySelectorAll('.slides img').length;
-
-function updateSlide(){
-    slides.style.transform =
-    `translateX(-${slideIndex * 100}%)`;
-}
-
-function nextSlide(){
-    slideIndex = (slideIndex + 1) % totalSlides;
-    updateSlide();
-}
-
-function prevSlide(){
-    slideIndex =
-    (slideIndex - 1 + totalSlides) % totalSlides;
-
-    updateSlide();
-}
-
-setInterval(() => {
-    nextSlide();
-}, 5000);
-
-</script>
-
+        // ให้สไลด์ภาพเปลี่ยนอัตโนมัติทุกๆ 5 วินาที
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
 </body>
 </html>
